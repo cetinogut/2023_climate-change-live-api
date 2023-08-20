@@ -21,8 +21,10 @@ npm run start
 
 4. If you want to deploy the api to Netlify: create folders functions with api.js ( a modified version of index.js) and functions with empty index.html file + netlify.toml
 5.  Add a new script to package.json for build ("build": "netlify deploy --prod")
-6.  When"you npm run build" the app will be deployed to your netlify  site, follow the netlify cli options. Choose "dist" for publish folder whe nprompted.
+6.  When"you npm run build" the app will be deployed to your netlify  site, follow the netlify cli options. Choose "dist" for publish folder when prompted.
 7.  Happy coding!!!
+
+https://rapidapi.com/cetinogutgm/api/climate-news-api6
 
 ## MIT Licence
 
