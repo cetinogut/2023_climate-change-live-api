@@ -2,8 +2,14 @@ const PORT = process.env.PORT || 8000
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
-const app = express()
 
+// Create an instance of the Express app
+const app = express();
+
+// Create a router to handle routes
+const router = express.Router();
+
+const serverless = require("serverless-http");
 
 const newspapers = [
     // {
@@ -95,16 +101,15 @@ newspapers.forEach(newspaper => {
         })
 })
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.json('Welcome to my Climate Change News API')
 })
 
-app.get('/news', (req, res) => {
+router.get('/news', (req, res) => {
     res.json(articles)
 })
 
-let cogutReq = null;
-app.get('/news/:newspaperId', (req, res) => {
+router.get('/news/:newspaperId', (req, res) => {
     
     console.log("REQUEST  PARAMS:", req.params.newspaperId)
     const newspaperId = req.params.newspaperId
@@ -133,4 +138,11 @@ app.get('/news/:newspaperId', (req, res) => {
         }).catch(err => console.log(err))
 })
 
-app.listen(PORT, () => console.log(`server running on PORT ${PORT}`))
+//app.listen(PORT, () => console.log(`server running on PORT ${PORT}`)) // bu staır localde çalıştırıken gerekli
+
+// Use the router to handle requests to the `/.netlify/functions/api` path
+app.use(`/.netlify/functions/api`, router);
+
+// Export the app and the serverless function
+module.exports = app;
+module.exports.handler = serverless(app);

@@ -11,7 +11,7 @@ You can run this project on your local machine. Just pull it down and do the fol
 
 ### Start the Project
 
-2. Now run the server:
+2. Now run the server i your localhost
 
 ```bash
 npm run start
@@ -19,17 +19,13 @@ npm run start
 
 3. Open [http://localhost:8000/news](http://localhost:8000/news) with your browser to see the results of the scrape in your terminal. You can also used certain paramters to get news from individual sources.
 
+4. If you want to deploy the api to Netlify: create folders functions with api.js ( a modified version of index.js) and functions with empty index.html file + netlify.toml
+5.  Add a new script to package.json for build ("build": "netlify deploy --prod")
+6.  When"you npm run build" the app will be deployed to your netlify  site, follow the netlify cli options. Choose "dist" for publish folder whe nprompted.
+7.  Happy coding!!!
 
 ## MIT Licence
 
-Copyright (c) 2020 Ania Kubow
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*Translation: Ofcourse you can use this for you project! Just make sure to say where you got this from :)
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
